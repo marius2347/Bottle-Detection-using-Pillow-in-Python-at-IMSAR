@@ -2,28 +2,28 @@ import cv2
 import numpy as np
 import os
 
-# Set the paths
+# set the paths
 image_folder = './calib_images'
 output_folder = './output_images'
 keypoints_file = './output_images/keypoints.txt'
 
-# Create output folder if it doesn't exist
+# create output folder if it doesn't exist
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-# Load images from the folder
+# load images from the folder
 image_list = []
 image_names = []
 
 for filename in os.listdir(image_folder):
-    if filename.endswith(('.png', '.jpg', '.jpeg', '.bmp')): 
+    if filename.endswith(('.bmp')): 
         img_path = os.path.join(image_folder, filename)
         img = cv2.imread(img_path)
         if img is not None:
             image_list.append(img)
             image_names.append(filename)
 
-# Initialize webcam
+# initialize webcam
 cap = cv2.VideoCapture(4)
 
 with open(keypoints_file, 'w') as kf:
@@ -46,7 +46,7 @@ with open(keypoints_file, 'w') as kf:
                 cv2.rectangle(frame, pt, (pt[0] + w, pt[1] + h), (0, 255, 0), 2)
                 cv2.putText(frame, name, (pt[0], pt[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
-                # Shi-Tomasi corner detection
+                # shi-Tomasi corner detection
                 corners = cv2.goodFeaturesToTrack(frame_gray, maxCorners=100, qualityLevel=0.01, minDistance=10, blockSize=3)
 
                 if corners is not None:
