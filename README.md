@@ -1,4 +1,4 @@
-<h1> Camera RGBD Bottle Detection + Live Edges - DL Python Project</h1>
+<h1> Camera RGBD Bottle Detection + Live Edges - IMSAR PROJECT</h1>
 <br>
 <h2>Features</h2>
 <ul>
