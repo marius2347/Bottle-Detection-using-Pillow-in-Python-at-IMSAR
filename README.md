@@ -1,4 +1,4 @@
-<h1> Bottle Detection using Pillow in Python at IMSAR</h1>
+<h1> Bottle Detection using OpenCV in Python at IMSAR</h1>
 <br>
 <h2>Features</h2>
 <ul>
